@@ -1,0 +1,37 @@
+Hi 
+
+I have replicated the mock up and also made it responsive. I have used Bootstrap 4. 
+For animation I have given heartbeat effect to Add to Cart button with respect to medicine.
+For javascript I have written script to count the number of items added to cart as the user click the button. 
+The text message which is otherwise hidden, displays on screen telling the user how many items have been added to cart.
+I have used google chrome browser for reference while development.
+
+Javascript Debug 
+
+one of the errors which says Uncaught SyntaxError: Unexpected token { ".on('finish.countdown', function {"
+fix for this would be ".on('finish.countdown', function() {"
+
+format for function is function() { code ....}
+
+for other error which says Uncaught TypeError: Cannot read property 'click' of undefined
+<script>
+        pop.click(function(){
+             $('.shadowarea').fadeIn();
+        });
+        var pop = $('.pop');
+        x.click(function(){$('.shadowarea').fadeOut();});
+  </script>
+  
+  var pop is defined after it is being used.
+  even if javascript supports hoisting pop could have been assigned some value to start with. the fix for this is would be
+  <script>
+		pop = $('.pop');
+        pop.click(function(){
+             $('.shadowarea').fadeIn();
+        });
+        var pop;
+        x.click(function(){$('.shadowarea').fadeOut();});
+  </script>
+  
+ The error Uncaught ReferenceError: jQuery is not defined for define(["jquery"],a):a(jQuery)}(function(a)
+as the error says jQery has not been defined. In order to use the jQuery we need to first define it.
